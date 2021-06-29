@@ -1,29 +1,28 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
 const TestUseFetch = () => {
-  const { response } = useFetch(
-    "https://jsonplaceholder.typicode.com/users",
-    {}
+  const { response, error, isLoading } = useFetch(
+    "https://jsonplaceholder.typicode.com/users"
   );
 
-  useEffect(() => {
-   setTimeout(() => {
-       console.log(response)
-   }, [])  
-  })
+  if (error !== null) {
+    return <p>Ups... Error!</p>
+  }
 
-  if (response == null) {
-    return <div>Loading...</div>;
+  if (isLoading || response == null) {
+    return <h3>Loading...</h3>
   }
 
   return (
     <div>
-        <h1>Users:</h1>
+      <h1>Users:</h1>
       {response.map((value) => (
         <div key={value.id}>
-            <h3>ID: {value.id} --- Name: {value.name}</h3>
-            <p>Email: {value.email}</p>
+          <h3>
+            ID: {value.id} --- Name: {value.name}
+          </h3>
+          <p>Email: {value.email}</p>
         </div>
       ))}
     </div>
