@@ -15,7 +15,7 @@ const TestUseFetch = () => {
   }
 
   return (
-    <div>
+    <>
       <h1>Users:</h1>
       {response.map((value) => (
         <div key={value.id}>
@@ -25,7 +25,7 @@ const TestUseFetch = () => {
           <p>Email: {value.email}</p>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
