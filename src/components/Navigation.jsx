@@ -14,7 +14,6 @@ const Navigations = () => {
           <Home />
         </Route>
         <Route path="/post">
-          <p>Posts:</p>
           <Posts />
         </Route>
 
