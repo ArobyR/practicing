@@ -1,10 +1,10 @@
 const reduceCounter = ({ state, actions }) => {
   switch (actions.type) {
     case "add":
-      return state + 1;
+      return state.num + 1;
 
     case "subtraction":
-      return state - 1;
+      return state.num - 1;
     default:
       return state;
   }
