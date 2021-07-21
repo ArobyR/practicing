@@ -1,21 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Navigations from "./components/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Memorize from "./components/Memos/Memorize";
-// import Test from "./components/Test";
-// import TestUseFetch from "./components/TestUseFetch";
+import { UserContext } from "./contexts/UserContext";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
-    <div className="App">
-      {/* <TestUseFetch /> */}
-      <Navigations />
-      {/* <Memorize /> */}
-      {/* <Custom /> */}
-      {/* <Test /> */}
-      {/* <Ref /> */}
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <AppRouter />
+    </UserContext.Provider>
   );
 }
 
