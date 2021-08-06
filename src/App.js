@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.scss";
+// import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { UserContext } from "./contexts/UserContext";
 import AppRouter from "./routes/AppRouter";
